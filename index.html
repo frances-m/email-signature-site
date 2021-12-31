@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Employee Email Signatures</title>
+
+    <link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/5dc1ccd7e0292e070ef93a24/1576190580039-LTUCA5OXORY7BCBKLCCY/ke17ZwdGBToddI8pDm48kAd79REmfPp0T7MSAcACHbR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UfD5M8D2cRclSvXGvWwuGocAGfntXKI7ZEJyoPZ9LeadZtJ3qR9G2BYeA0wOAaeYNg/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/bzm4ohc.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+</head>
+
+<body>
+    <div class="messages" id="messages"></div>
+
+    <header class="header">
+        <a class="header__link" href="https://stormboard.com">
+            <img class="header__logo" alt="Stormboard" src="Images/full-colour-horizontal.png" />
+            <h1 class="visually-hidden">Stormboard</h1>
+          </a>
+    </header>
+
+    <main>
+        <div class="top">
+            <section class="container--instruction" id="instruction-small">
+                <div class="instruction__text">
+                    <p class="instruction__title">Instructions</p>
+                    <ol class="instruction__list">
+                        <li class="instruction__li">Fill out the form below and click the <span class="bold">Submit</span> button.</li>
+                        <li class="instruction__li">Ensure that the details in the signature preview are correct, then click on the <span class="bold">Copy</span> button. For HubSpot and Outplay email signatures, use the <span class="bold">Copy HTML</span> button.</li>
+                        <li class="instruction__li">You'll now be able to paste your new signature as needed. For further instruction, scroll down and click on the name of the app that you'd like to add your email signature to.</li>
+                    </ol>
+                </div>
+            </section>
+        <section class="container container--form">
+            <p class="container__title">Stormboard Email Signature Generator</p>
+            <form class="form" method="get" target="_self">
+                <label class="form__label" for="fullname">Full Name <span class="required">*</span></label>
+                <input class="form__input" id="form-fullname" name="fullname" type="text" placeholder="Full Name" required />
+
+                <label class="form__label" for="title">Job Title <span class="required">*</span></label>
+                <input class="form__input" id="form-title" name="title" type="text" placeholder="Job Title" required />
+
+                <label class="form__label" for="phone" id="phone-label">Phone Number <span class="optional">(optional)</span></label>
+                
+                <div class="form__phone-inputs">
+                    <input class="form__input" id="form-phone" name="phone" type="tel" placeholder="(###) ###-####" pattern="([(]?\d{3}[)]?\s?[-.]?\s?\d{3}\s?[-.]?\s?\d{4})|$" maxlength="14" />
+
+                    <label class="form__label" for="ext" id="ext-label">Ext</label>
+                    <input class="form__input" id="form-ext" name="ext" type="tel" placeholder="###" pattern="^[0-9]*$" maxlength="3" />
+                </div>
+
+                <label class="form__label" for="email">Stormboard Email <span class="required">*</span></label>
+                <input class="form__input" id="form-email" name="email" type="email" placeholder="email@stormboard.com" pattern=".+@stormboard\.com" required />
+
+                <button class="form__button button" type="submit">Submit</button>
+            </form>
+        </section>
+        <div class="right-column">
+        <section class="container container--sig">
+            <div class="sig" id="sig">
+                    <table style="font-family:Arial;font-size:medium;text-align:start;border-collapse:collapse">
+                      <tbody>
+                        <tr>
+                          <td style="line-height:1.2;padding:0.01px 0.01px 12px">
+                            <span style="text-transform:initial;font-weight:bold">
+                              <span id="sig-fullname" style="color:rgb(100, 100, 100)">
+                                [Your Name]
+                              </span>
+                            </span>
+                            <br>
+                            <span id="sig-title" style="font-family:Arial;font-size:13px;letter-spacing:0px;text-transform:initial;font-weight:bold;color:rgb(100, 100, 100)">[Job Title],</span>
+                            <span style="font-size:13px;letter-spacing:0px;text-transform:initial;font-weight:bold;color:rgb(100, 100, 100)">Stormboard - Work Better Together</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding:0.01px;line-height:0">
+                            <table style="border-collapse:collapse">
+                              <tbody>
+                                <tr>
+                                  <td style="padding:0.01px">
+                                    <table style="border-collapse:collapse">
+                                      <tbody>
+                                        <tr>
+                                          <td style="padding:0.01px 0.01px 6px">
+                                            <table style="border-collapse:collapse;line-height:14px;font-size:12px">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="padding:0.01px">
+                                                    <a id="sig-phone-link" href="tel:(855)786-7655" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="0" style="text-decoration:none">
+                                                      <span id="sig-phone" style="line-height:1.2;color:rgb(33, 33, 33);">
+                                                        (855) 786-7655
+                                                      </span>
+                                                    </a>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                          <td style="padding:0.01px 0.01px 6px">
+                                            <table style="border-collapse:collapse;line-height:14px;font-size:12px">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="padding:0px 6px">
+                                                    <span style="font-weight:bold;color:rgb(33, 33, 33);vertical-align:2px">|</span>
+                                                  </td>
+                                                  <td style="padding:0.01px">
+                                                    <a href="http://www.stormboard.com/" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="1" style="text-decoration:none">
+                                                      <span style="line-height:1.2;color:rgb(33, 33, 33)">www.stormboard.com</span>
+                                                    </a>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td style="padding:0.01px">
+                                    <table style="border-collapse:collapse">
+                                      <tbody>
+                                        <tr>
+                                          <td style="padding:0.01px 0.01px 6px">
+                                            <table style="border-collapse:collapse;line-height:14px;font-size:12px">
+                                              <tbody>
+                                                <tr>
+                                                  <td style="padding:0.01px">
+                                                    <a id="sig-email-link" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="2" style="text-decoration:none">
+                                                      <span id="sig-email" style="line-height:1.2;color:rgb(33, 33, 33)">[Your Work Email]</span>
+                                                    </a>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding:12px 0.01px 0.01px">
+                            <table style="border-collapse:collapse;width:322.656px">
+                              <tbody>
+                                <tr>
+                                  <td style="padding:0.01px">
+                                    <table>
+                                      <tbody>
+                                        <tr>
+                                          <td align="left" style="padding-right:6px;text-align:center">
+                                            <a href="https://www.facebook.com/stormboard" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="3" style="font-size:11px;color:rgb(68, 68, 68)">
+                                              <img data-imagetype="External" src="https://cdn.gifo.wisestamp.com/social/facebook/3b5998/32/0/background.png" width="16" height="16" style="float:left;border:none">
+                                            </a>
+                                          </td>
+                                          <td align="left" style="padding-right:6px;text-align:center">
+                                            <a href="https://www.linkedin.com/company/2990071/" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="4" style="font-size:11px;color:rgb(68, 68, 68)">
+                                              <img data-imagetype="External" src="https://cdn.gifo.wisestamp.com/social/linkedin/0077b5/32/0/background.png" width="16" height="16" style="float:left;border:none">
+                                            </a>
+                                          </td>
+                                          <td align="left" style="padding-right:6px;text-align:center">
+                                            <a href="https://twitter.com/stormboard" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="5" style="font-size:11px;color:rgb(68, 68, 68)">
+                                              <img data-imagetype="External" src="https://cdn.gifo.wisestamp.com/social/twitter/55acee/32/0/background.png" width="16" height="16" style="float:left;border:none">
+                                            </a>
+                                          </td>
+                                          <td align="left" style="padding-right:6px;text-align:center">
+                                            <a href="https://www.pinterest.ca/stormboard" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable" data-linkindex="6" style="font-size:11px;color:rgb(68, 68, 68)">
+                                              <img data-imagetype="External" src="https://cdn.gifo.wisestamp.com/social/pinterest/bd081c/32/0/background.png" width="16" height="16" style="float:left;border:none">
+                                            </a>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+            </div>
+            <div class="sig__buttons">
+                <button class="button sig__button sig__button--richhtml" id="btn-copy-richhtml">Copy</button>
+                <div class="buttons__spacer"></div>
+                <button class="button sig__button sig__button--html" id="btn-copy-html">Copy HTML</button>
+            </div>
+        </section>
+        <section class="container--instruction" id="instruction-large">
+            <div class="instruction__text">
+                <p class="instruction__title">Instructions</p>
+                <ol class="instruction__list">
+                    <li class="instruction__li">Fill out the form on the left and click the <span class="bold">Submit</span> button.</li>
+                    <li class="instruction__li">Ensure that the details in the signature above are correct, then click on the <span class="bold">Copy</span> button. For HubSpot and Outplay email signatures, use the <span class="bold">Copy HTML</span> button.</li>
+                    <li class="instruction__li">You'll now be able to paste your new signature as needed. For further instruction, scroll down and click on the name of the app that you'd like to add your email signature to.</li>
+                </ol>
+            </div>
+        </section>
+        </div>
+    </div>
+    <div class="bottom">
+        <section class="bottom__container container">
+            <div class="details">
+
+                <details class="details__detail">
+                    <summary class="details__summary">Microsoft Outlook (Web App)</summary>
+                        <div class="details__content">
+                            <ul class="details__ul">
+                                <li class="details__li">Follow the instructions above and click on the <span class="bold">Copy</span> button.</li>
+                                <li class="details__li">In your browser, head to <a href="https://outlook.office.com" target="_blank">outlook.office.com</a>.</li>
+                                <li class="details__li">Click the gear icon <span class="icon">&#9881;</span> in the top right corner of the browser window to open the <span class="bold">Settings</span> panel.</li>
+                                <li class="details__li">In the search bar at the top of the <span class="bold">Settings</span> panel, type "Email Signature" and click on the first result.</li>
+                                <li class="details__li">In the <span class="bold">Compose and Reply</span> tab, click on <span class="bold">+ New signature</span>.</li>
+                                <li class="details__li">Enter a name for your new signature in the <span class="bold">"Edit Signature Name"</span> text box.</li>
+                                <li class="details__li">Paste your new signature into the large text input area and verify that your signature is correct.</li>
+                                <li class="details__li">At the bottom of the <span class="bold">Compose and Reply</span> tab, click the <span class="bold">Save</span> button.</li>
+                                <li class="details__li">Make sure that both of the drop-down menus in the <span class="bold">Select default signatures</span> section have your new signature selected.</li>
+                            </ul>
+                            <img class="details__img" src="images/outlook-web.gif" /> 
+                        </div>
+                </details>
+                <div class="line-break"></div>
+
+                <details class="details__detail">
+                    <summary class="details__summary">Microsoft Outlook (Desktop App)</summary>
+                        <div class="details__content">
+                            <ul class="details__ul">
+                                <li class="details__li">Follow the instructions above and click on the <span class="bold">Copy</span> button.</li>
+                                <li class="details__li">Open the Microsoft Outlook desktop app.</li>
+                                <li class="details__li">In the top left corner of your screen, click on <span class="bold">Outlook</span>, next to the Apple icon.</li>
+                                <li class="details__li">In the drop down menu, select <span class="bold">Preferences...</span>.</li>
+                                <li class="details__li">In the <span class="bold">Outlook Preferences</span> window, click on <span class="bold">Signatures</span>.</li>
+                                <li class="details__li">In the <span class="bold">Signatures</span> window, click the <span class="icon bold">+</span> button.</li>
+                                <li class="details__li">In the new window that pops up, write a name for your signature in the <span class="bold">Signature Name:</span> text box.</li>
+                                <li class="details__li">Paste your new signature into the large text input area and verify that your signature is correct.</li>
+                                <li class="details__li">Click the save icon  <span class="icon">&#128190;</span> at the top of the window and close the window.</li>
+                                <li class="details__li">Make sure that both of the drop-down menus in the <span class="bold">Choose default signatures</span> section (New messages & Replies/forwards) have your new signature selected.</li>
+                            </ul>
+                            <img class="details__img" src="images/outlook-desktop.gif" /> 
+                        </div>
+                </details>
+                <div class="line-break"></div>
+
+                <details class="details__detail">
+                    <summary class="details__summary">HubSpot</summary>
+                        <div class="details__content">
+                            <ul class="details__ul">
+                                <li class="details__li">Follow the instructions above and click on the <span class="bold">Copy HTML</span> button.</li>
+                                <li class="details__li">In your browser, head to <a href="https://app.hubspot.com" target="_blank">app.hubspot.com</a>.</li>
+                                <li class="details__li">Click the gear icon <span class="icon">&#9881;</span> in the top right corner of the browser window to open the settings.</li>
+                                <li class="details__li">Under the <span class="bold">General</span> heading, click on the <span class="bold">Email</span> tab.</li>
+                                <li class="details__li">Under the <span class="bold">Configure</span> heading, click on <span class="bold">Edit email signature</span>.</li>
+                                <li class="details__li">In the new window that pops up, select <span class="bold">HTML</span> near the top right.</li>
+                                <li class="details__li">Paste your new signature into the large text input area and verify that your signature is correct in the <span class="bold">Preview</span> below.</li>
+                                <li class="details__li">At the bottom of the window, click the <span class="bold">Save</span> button.</li>
+                            </ul>
+                            <img class="details__img" src="images/hubspot.gif" /> 
+                        </div>
+                </details>
+                <div class="line-break"></div>
+
+                <details class="details__detail">
+                    <summary class="details__summary">Outplay</summary>
+                        <div class="details__content">
+                            <ul class="details__ul">
+                                <li class="details__li">Follow the instructions above and click on the <span class="bold">Copy HTML</span> button.</li>
+                                <li class="details__li">In your browser, head to <a href="https://app.outplayhq.com" target="_blank">app.outplayhq.com</a>.</li>
+                                <li class="details__li">In the top right corner, click on your profile image. Then select <span class="bold"><span class="icon">&#9881;</span> Settings</span> from the drop-down.</li>
+                                <li class="details__li">On the <span class="bold">Settings</span> page, click on <span class="bold">Emailbox</span> under the <span class="bold">User</span> on the left side of the window.</li>
+                                <li class="details__li">If you've connected your email account to Outplay, you will see your email address and its type near the bottom of the <span class="bold">Emailbox</span> page. On the right side of the page, across from your email address, click on the <span class="icon">&#8942;</span> icon. Then select <span class="bold">Edit</span>.</li>
+                                <li class="details__li">In the new window that pops up, select the <span class="bold icon">&lt;/&gt;</span> (code view) symbol under the <span class="bold">Signature</span> heading.</li>
+                                <li class="details__li">Paste your new signature into the large text input area, then click on the <span class="bold icon">&lt;/&gt;</span> (code view) symbol again and verify that your signature is correct.</li>
+                                <li class="details__li">At the bottom of the window, click the <span class="bold">Save</span> button.</li>
+                            </ul> 
+                        </div>
+                </details>
+
+            </div>
+        </section>
+    </div>
+
+    </main>
+    <footer></footer>
+    <script src="main.js"></script>
+    
+</body>
