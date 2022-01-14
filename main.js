@@ -32,6 +32,7 @@ const sigEmailLink = document.getElementById('sig-email-link');
 
 
 // Modify signature and add values back to form inputs
+
 if (fullName) {
     fullNameInput.setAttribute("value", fullName);
     sigFullName.innerHTML = fullName;
@@ -158,3 +159,12 @@ const copyButtonHTML = document.getElementById("btn-copy-html");
 
 copyButtonRichHTML.addEventListener("click", setClipboard);
 copyButtonHTML.addEventListener("click", setClipboardHTML);
+
+/* TOOLTIP LOGIC */
+
+const titleTooltip = document.getElementById("title-tooltip");
+titleInput.addEventListener("focusin", function(){titleTooltip.classList.remove("visually-hidden")});
+titleInput.addEventListener("focusout", function(){titleTooltip.classList.add("visually-hidden")});
+
+
+
