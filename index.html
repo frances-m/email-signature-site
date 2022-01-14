@@ -41,7 +41,12 @@
             <form class="form" method="get" target="_self">
                 <label class="form__label" for="fullname">Full Name <span class="required">*</span></label>
                 <input class="form__input" id="form-fullname" name="fullname" type="text" placeholder="Full Name" required />
-
+                
+                <div class="container--tooltip">
+                  <div class="tooltip visually-hidden" id="title-tooltip">
+                    <p class="tooltip__text">Job Title should match your Occupation listed in Payworks</p>
+                  </div>
+                </div>
                 <label class="form__label" for="title">Job Title <span class="required">*</span></label>
                 <input class="form__input" id="form-title" name="title" type="text" placeholder="Job Title" required />
 

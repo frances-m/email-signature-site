@@ -186,14 +186,48 @@ body {
 
 #form-ext::-webkit-outer-spin-button,
 #form-ext::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
 .form__button {
     margin-bottom: 5rem;
     margin-top: 2rem;
+}
+
+/* Tooltip */
+
+.container--tooltip {
+    height: 0;
+    z-index: 1;
+}
+
+.tooltip {
+    width: 18rem;
+    text-align: center;
+    position: relative;
+    top: -4rem;
+    right: -8rem;
+} 
+
+.tooltip::after {
+    content: "";
+    position: relative;
+    top: .9rem;
+    border: 10px solid #000;
+    border-color: #EB7C63 transparent transparent transparent;
+}
+
+.tooltip__text {
+    padding: .5rem .5rem;
+    margin: 0;
+    background-color: #EB7C63;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color:rgb(241, 241, 241);
+    box-shadow: 0rem .5rem .6rem 0rem #00000028;
 }
 
 /* RIGHT COLUMN */
