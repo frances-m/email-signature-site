@@ -132,6 +132,7 @@ function setClipboard() {
 
     } catch(e) {
         console.log(e);
+        copyFailure(e);
     }
 }
 
@@ -151,6 +152,7 @@ function setClipboardHTML() {
 
     } catch(e) {
         console.log(e);
+        copyFailure(e);
     }
 }
 
@@ -168,3 +170,7 @@ titleInput.addEventListener("focusout", function(){titleTooltip.classList.add("v
 
 
 
+// var isChrome = !!window.chrome;
+// if (!isChrome) {
+//     alert("The functionality of this site may be limited in some web browsers. For the best experience, please use Google Chrome.")
+// }
